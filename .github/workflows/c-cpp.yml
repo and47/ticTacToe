@@ -150,12 +150,11 @@ jobs:
 
       - name: Test
         shell: bash
-        working-directory: instdir
         run: ctest -VV
           
       - name: Pack
         shell: bash
-        working-directory: instdir
+        #working-directory: instdir
         run: |
           ls -laR
           ${{ matrix.config.archiver }} ../${{ matrix.config.artifact }} .
